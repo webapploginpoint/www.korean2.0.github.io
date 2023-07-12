@@ -51,12 +51,11 @@ body {
 }
 
 .track {
-    margin: 4cm 0 8cm;
+    margin: 1cm 0 3cm;
 }
 
 #progress {
     list-style: none;
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -77,49 +76,35 @@ body {
     justify-content: space-between;
     width: 50px;
     align-items: center;
-    font-size: 2rem;
+    font-size: 5rem;
     height: 50px;
     background: var(--line);
-    color: #fff;
-    border-radius: 50%;
+    color: black;
+    border-radius: 40%;
     z-index: 11111;
 }
 
-#progress li:last-child::before {
-    content: '\2713';
-    font-weight: bold;
-    background: var(--light);
-}
-
-#progress::before {
+#progress li::after {
     content: '';
     position: absolute;
-    top: 20px;
-    width: 55%;
-    margin-left: 35px;
-    height: 10px;
-    background: var(--line);
-    z-index: 111;
-}
-
-#progress::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    width: 80px;
-    height: 10px;
-    background: #c5cae9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--line);
+    width: 1px;
+    height: 100%;
+    z-index: -1;
 }
 
 .lists {
     margin-top: -190px;
     height: -900px;
-    display: flex;
+    display: inline;
     gap: 5em;
 }
 
 .list {
-    display: flex;
+    display: inline;
     align-items: center;
     gap: 1em;
 }
@@ -130,5 +115,26 @@ body {
 
 .list img {
     width: 50px;
+}
+
+.done {
+    width: 30%;
+    position: ;
+}
+
+.done {
+    content: '\2713';
+    font-size: 20px;
+    background-color: #007bfd;
+    background-size: contain;
+    border-radius: 4px;
+}
+
+.undone {
+    font-size: 20px;
+    background-color: red;
+    border-radius: 4px;
+    width: 30%;
+    position: relative;
 }
 
