@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1 class="head"> <br /> <i><small class="small"></small></i></h1>
+
+    <p class="intro">Enter tracking number to track your
+         cargo, parcel and get to know the delivery status online.
+    </p>
+    <hr>
+    <center>
+        <p class="last">
+            <input class="input" placeholder="Enter order number" type="number" id="trackNumberInput">
+            <button class="button" onclick="validateTrackNumber()">Track</button>
+        </p>
+    </center>
+    <script>
+        function validateTrackNumber() {
+            var trackNumber = document.getElementById("trackNumberInput").value;
+
+            // Perform your validation logic here
+            // Example: check if the track number is equal to "123456"
+            if (trackNumber === "123456") {
+                // redirect to the next page
+                window.location.href = "in.html";
+            } else {
+                // display error message
+                alert("Invalid Track Number");
+            }
+        }
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        // Receive new message from server
+        socket.on('chat message', function (data) {
+            var chatbox = document.getElementById("chatbox");
+            var newMessage = document.createElement("p");
+            newMessage.className = "message";
+            newMessage.innerText = data.sender + ": " + data.message;
+            chatbox.appendChild(newMessage);
+        });
+    </script>
+
+    <script type="text/javascript" src="https://embed.tawk.to/64ada09e94cf5d49dc62f519/1h533mrgu"></script>
+</body>
+</html>
